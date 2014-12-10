@@ -1,0 +1,18 @@
+/* 
+* fix Internet Explorer 5-8 
+*/
+
+.clearfix{
+
+	*zoom: 1;
+}
+
+/* force smooth images in old IE*/
+img{
+	-ms-interpolation-mode:bicubic;
+}
+
+/* fix SVG overflow in old IE */
+svg:not(:root){
+	overflow:hidden;
+}
