@@ -161,7 +161,7 @@
 	<!--help search engines manage sites with query strings
 	@link http://moz.com/blog/canonical-url-tag-the-most-important-advancement-in-seo-practices-since-sitemaps
 	-->
-	<link rel="canonical" href="http://stephtwdesigns.com/public_v3/">
+	<link rel="canonical" href="http://stephtwdesigns.com/wevidhere-stephaniewadia/">
 
 	<!--facebook Open Graph data
 	(under social networks, supported by Facebook and Linkedin)
@@ -172,11 +172,11 @@
 	Linkedin
 	@link https://developer.linkedin.com/documents/setting-display-tags-shares
 	-->
-	<meta property="og:url" content="http://stephtwdesigns.com/public_v3/">
+	<meta property="og:url" content="http://stephtwdesigns.com/wevidhere-stephaniewadia/">
 	<meta property="og:locale" content="en_US">
 	<meta property="og:title" content="WeVidHere by Vegan Meat Market">
 	<meta property="og:description" content="Vegan Meat Market presents WeVidHere, and app which lets people find each other in a social sharing network, and link updates of their personal audio, video and secrets.">
-	<meta property="og:image" content="http://stephtwdesigns.com/public_v3/img/logo.png">
+	<meta property="og:image" content="http://stephtwdesigns.com/wevidhere-stephaniewadia/img/logo.png">
 
 	<!--Twitter card data
 	@link https://dev.twitter.com/cards/types/app
@@ -188,13 +188,13 @@
 	<meta name="twitter:creator" content="@cheetahloverxo">
 	<meta name="twitter:title" content="WeVidHere by Vegan Meat Market">
 	<meta name="twitter:description" content="WeVidHere allows you to share your audio and video feeds in a gamelike environment, optimized and made accessible for all.">
-	<meta name="twitter:image:src" content="http://stephtwdesigns.com/public_v3/img/icon/logo.png">
+	<meta name="twitter:image:src" content="http://stephtwdesigns.com/wevidhere-stephaniewadia/img/icon/logo.png">
 
 	<!--Google+ authorship
 	@link https://blog.kissmetrics.com/google-authorship/
 	@link https://www.percussion.com/blog/2014/March/how-to-optimize-your-content-for-social-sharing-with-meta-tags
 	-->
-	<link href="http://google.com/+PeteMarkiewiczPlyojump" rel="author">
+	<link href="http://google.com/+StephanieWadia" rel="author">
 
 
 	<!--
@@ -255,7 +255,7 @@
 
 	<script src="js/lib/angular/angular.js"></script>
 	<script src="js/ag-controller.js"></script>
-	
+
 </head>
 
 <!--microdata describing this as a web page. 
@@ -332,12 +332,16 @@ The item properties allow us to define our ARIA support to search engines -->
 
 	NOTE: We added "WebGame" as a custom classification of this app (not in schema.org)
 	-->
-	<main id="screens" role="main" itemscope itemtype="http://schema.org/SoftwareApplication">
+	<main id="screens" role="main" itemscope itemtype="http://schema.org/SoftwareApplication" ng-app="WeVidHere">
+
+
+		<!-- Debugger -->
+		<p>Nothing here{{'yet' + '!'}}</p>
 
 		<!--hide this from users, but leave for text readers and search engines. Include 
 		author and version microdata-->
 		<h2 itemprop="name">WeVidHere</h2>
-		<a itemprop="url" href="http://plyojump.com/projects/veganmeatmarket"><span itemprop="author">Vegan Meat Market Games</span></a>
+		<a itemprop="url" href="http://stephtwdesigns.com/public_v3/"><span itemprop="author">Vegan Meat Market Games</span></a>
 		
 		<meta itemprop="softwareVersion" content="version 3">
 		<meta itemprop="datePublished" content="October 22, 2014">
@@ -387,7 +391,24 @@ The item properties allow us to define our ARIA support to search engines -->
 		<!--*******************************************************************-->
 		<!--************************* SCREEN CONFIG ***************************-->
 		<!--*******************************************************************-->
-		<article id="screen-config" class="visible-none" aria-hidden="true">
+		<article id="screen-config" class="visible-none" aria-hidden="true" ng-app="WeVidHere">
+
+			<form name="userForm" ng-submit="doLogin()" novalidiate>
+				<div class="form-group" ng-repeat="user in formData.users">
+<ng-form name="userFieldForm">
+<label>{{user.name}}</label>
+<label if="{{ user.online }} == 'true'}"></label>
+</div>
+<label for="un">USERNAME:</label>
+<input type="text" ng-model="formData.username" name="username" id="username" required> <br>
+<label for="pw">PASSWORD:</label>
+<input type="text" ng-model="formData.password" name="password" id="password" required> <br>
+<input type="submit" name="subb" value="SUB">
+</ng-form>
+			</form>
+
+
+
 			<header>
 				<h2><span class="user-name">Account</span> Settings</h2>
 			</header>
